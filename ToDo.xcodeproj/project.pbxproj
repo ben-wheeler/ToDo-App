@@ -14,6 +14,7 @@
 		B54554D1274C69AC000F1FAF /* ToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54554D0274C69AC000F1FAF /* ToDoTests.swift */; };
 		B54554DB274C69AC000F1FAF /* ToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54554DA274C69AC000F1FAF /* ToDoUITests.swift */; };
 		B54554DD274C69AC000F1FAF /* ToDoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54554DC274C69AC000F1FAF /* ToDoUITestsLaunchTests.swift */; };
+		B547AF12274E291800070558 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B547AF11274E291800070558 /* ToDoListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		B54554D6274C69AC000F1FAF /* ToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54554DA274C69AC000F1FAF /* ToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoUITests.swift; sourceTree = "<group>"; };
 		B54554DC274C69AC000F1FAF /* ToDoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B547AF11274E291800070558 /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				B54554BF274C69A9000F1FAF /* ToDoApp.swift */,
 				B54554C1274C69A9000F1FAF /* ContentView.swift */,
 				B54554C3274C69AB000F1FAF /* Assets.xcassets */,
+				B547AF10274E28F500070558 /* New Group */,
 				B54554C5274C69AB000F1FAF /* Preview Content */,
 			);
 			path = ToDo;
@@ -125,6 +128,14 @@
 				B54554DC274C69AC000F1FAF /* ToDoUITestsLaunchTests.swift */,
 			);
 			path = ToDoUITests;
+			sourceTree = "<group>";
+		};
+		B547AF10274E28F500070558 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				B547AF11274E291800070558 /* ToDoListView.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 			files = (
 				B54554C2274C69A9000F1FAF /* ContentView.swift in Sources */,
 				B54554C0274C69A9000F1FAF /* ToDoApp.swift in Sources */,
+				B547AF12274E291800070558 /* ToDoListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
