@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
+    struct toDo: Identifiable, Hashable {
+        let name: String
+        let id = UUID()
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    private var completeToDoList = [
+        toDo(name: "Shopping"),
+        toDo(name: "Work"),
+        toDo(name: "Mow Lawn"),
+        toDo(name: "Go to Melbourne")
+    ]
+    @State private var multiSelection = Set<UUID>()
+    
+    var body: some View {
+        NavigationView {
+            List(completeToDoList, selection: $multiSelection) {
+                Text($0.name)
+            }
+            .navigationTitle("To-Do List")
+            .toolbar { EditButton() }
+        }
+//        Text("\(multiSelection.count) selections")
     }
 }

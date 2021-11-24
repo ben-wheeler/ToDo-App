@@ -15,5 +15,3 @@ struct ToDoApp: App {
         }
     }
 }
-
-// this is a commit test 
