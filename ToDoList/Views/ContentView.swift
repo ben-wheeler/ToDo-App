@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var dataStore: DataStore
     @State private var modalType: ModalType? = nil
+
     var body: some View {
         NavigationView {
             List() {
@@ -17,10 +18,17 @@ struct ContentView: View {
                     Button {
                         modalType = .update(toDo)
                     } label: {
+                        HStack{
+                            if(toDo.completed){
+                                Image(systemName: "checkmark.circle.fill")
+                            } else {
+                                Image(systemName: "circle")
+                            }
                         Text(toDo.name)
                             .font(.title3)
-                            .strikethrough(toDo.completed)
-                            .foregroundColor(toDo.completed ? .green : Color(.label))
+                            .strikethrough(toDo.completed) 
+                            .foregroundColor(toDo.completed ? .gray : Color(.label))
+                    }
                     }
             }
                 .onDelete(perform: dataStore.deleteToDo)
@@ -37,7 +45,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("ToDoList")
+            .navigationTitle("To Do List")
         }
         .sheet(item: $modalType) { $0 }
     }

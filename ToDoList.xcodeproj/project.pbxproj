@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B5158EF2275E166A00E3731C /* ModalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5158EF1275E166A00E3731C /* ModalType.swift */; };
+		B5158EF9275E1B2700E3731C /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5158EF8275E1B2700E3731C /* FileManager+Extensions.swift */; };
 		B5346FCE275E0B59005F89D7 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5346FCD275E0B59005F89D7 /* ToDo.swift */; };
 		B5346FD0275E0C02005F89D7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5346FCF275E0C02005F89D7 /* DataStore.swift */; };
 		B5346FD2275E0F2F005F89D7 /* ToDoFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5346FD1275E0F2F005F89D7 /* ToDoFormViewModel.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		B5158EF1275E166A00E3731C /* ModalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalType.swift; sourceTree = "<group>"; };
+		B5158EF8275E1B2700E3731C /* FileManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
 		B5346FCD275E0B59005F89D7 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		B5346FCF275E0C02005F89D7 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		B5346FD1275E0F2F005F89D7 /* ToDoFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoFormViewModel.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		B5158EF7275E1B1800E3731C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B5158EF8275E1B2700E3731C /* FileManager+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B5782A11275E0B190056323B = {
 			isa = PBXGroup;
 			children = (
@@ -95,10 +105,11 @@
 		B5782A1C275E0B190056323B /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				B5158EF7275E1B1800E3731C /* Extensions */,
 				B5782A1D275E0B190056323B /* ToDoListApp.swift */,
-				B5158EF6275E19AE00E3731C /* ViewModels */,
-				B5158EF5275E19AC00E3731C /* Models */,
 				B5158EF3275E199A00E3731C /* Views */,
+				B5158EF5275E19AC00E3731C /* Models */,
+				B5158EF6275E19AE00E3731C /* ViewModels */,
 				B5782A21275E0B1B0056323B /* Assets.xcassets */,
 				B5782A23275E0B1B0056323B /* Preview Content */,
 			);
@@ -189,6 +200,7 @@
 				B5346FCE275E0B59005F89D7 /* ToDo.swift in Sources */,
 				B5346FD0275E0C02005F89D7 /* DataStore.swift in Sources */,
 				B5782A20275E0B190056323B /* ContentView.swift in Sources */,
+				B5158EF9275E1B2700E3731C /* FileManager+Extensions.swift in Sources */,
 				B5782A1E275E0B190056323B /* ToDoListApp.swift in Sources */,
 				B5346FD2275E0F2F005F89D7 /* ToDoFormViewModel.swift in Sources */,
 			);
