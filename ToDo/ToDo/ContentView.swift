@@ -21,10 +21,22 @@ struct ContentView: View {
                 Section {
                     TextField("New To-Do", text: $newTODO)
                 }
+                
                 Section {
                     ForEach(toDos, id: \.self) { task in
-                        Text(task)
+                        HStack{
+                            Image(systemName: "circle")
+                                .foregroundColor(Color(.systemMint))
+                            Text(task)
+                        }
                     }
+                }
+            }
+            .navigationTitle("To-Do List")
+            .toolbar {
+                Button {
+                } label: {
+                    Image(systemName: "plus.circle.fill")
                 }
             }
             .navigationTitle("ToDos")
@@ -47,11 +59,12 @@ struct ContentView: View {
             errorTitle = "Task already exists"
             errorMessage = "'\(task)' already exists within To-Do List, sorry! Please enter a task with a different name"
             showError = true
+            
             return
         }
         
         withAnimation {
-        toDos.insert(task, at: 0)
+            toDos.insert(task, at: 0)
         }
         newTODO = ""
     }
