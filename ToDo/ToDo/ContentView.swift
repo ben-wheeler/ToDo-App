@@ -50,7 +50,9 @@ struct ContentView: View {
             return
         }
         
+        withAnimation {
         toDos.insert(task, at: 0)
+        }
         newTODO = ""
     }
     
