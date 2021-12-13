@@ -7,8 +7,65 @@
 
 import SwiftUI
 
+struct TaskItem {
+    let name: String
+    let due: String
+}
+
+class ToDos: ObservableObject {
+    @Published var items = [TaskItem]()
+}
+
 struct ContentView: View {
-    @State private var toDos = [String]()
+    @StateObject var todos = ToDos()
+    
+    @State private var newTODO = ""
+    
+    @State private var showingSheet = false
+    
+    var body: some View {
+        NavigationView {
+            List{
+                ForEach(todos.items, id: \.name) { task in
+                    HStack{
+                        Image(systemName: "circle")
+                            .foregroundColor(Color(.systemMint))
+                        Text(task.name)
+                        Image(systemName: "calendar")
+                        Text(task.due)
+                    }
+                }
+                .onDelete(perform: removeItems)
+            }
+            .navigationTitle("To-Do List")
+            .toolbar {
+                HStack{
+                EditButton()
+                    Spacer()
+                Button {
+                    let t = TaskItem(name: "Test", due: "23/07/2021")
+                    todos.items.append(t)
+//                    showingSheet.toggle()
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                }
+            }
+            .sheet(isPresented: $showingSheet) {
+//                NewSheet(currentToDos: todos)
+            }
+            }
+            
+        }
+    }
+    func removeItems(at offsets: IndexSet) {
+        todos.items.remove(atOffsets: offsets)
+    }
+}
+
+struct NewSheet: View {
+    @Environment(\.dismiss) var dismiss
+    
+    @State private var currentToDos: [String]
     @State private var newTODO = ""
     
     @State private var errorMessage = ""
@@ -19,64 +76,55 @@ struct ContentView: View {
         NavigationView {
             List{
                 Section {
-                    TextField("New To-Do", text: $newTODO)
+                    TextField("New To-Do Name", text: $newTODO)
                 }
                 
-                Section {
-                    ForEach(toDos, id: \.self) { task in
-                        HStack{
-                            Image(systemName: "circle")
-                                .foregroundColor(Color(.systemMint))
-                            Text(task)
-                        }
+                .navigationTitle("New To-Do")
+                .toolbar {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(Color(.gray))
                     }
                 }
-            }
-            .navigationTitle("To-Do List")
-            .toolbar {
-                Button {
-                } label: {
-                    Image(systemName: "plus.circle.fill")
+                .onSubmit (addTODO)
+                .alert(errorTitle, isPresented: $showError) {
+                    Button("OK", role: .cancel) { }
+                } message: {
+                    Text(errorMessage)
                 }
+                
             }
-            .navigationTitle("ToDos")
-            .onSubmit (addTODO)
-            .alert(errorTitle, isPresented: $showError) {
-                Button("OK", role: .cancel) { }
-            } message: {
-                Text(errorMessage)
+        }
+    }
+        
+        
+        func addTODO() {
+            let task = newTODO.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            guard task.count > 0 else { return }
+            guard isNew(word: task) else {
+                errorTitle = "Task already exists"
+                errorMessage = "'\(task)' already exists within To-Do List, sorry! Please enter a task with a different name"
+                showError = true
+                
+                return
             }
             
-        }
-    }
-    
-    
-    func addTODO() {
-        let task = newTODO.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        guard task.count > 0 else { return }
-        guard isNew(word: task) else {
-            errorTitle = "Task already exists"
-            errorMessage = "'\(task)' already exists within To-Do List, sorry! Please enter a task with a different name"
-            showError = true
-            
-            return
+            withAnimation {
+                currentToDos.insert(task, at: 0)
+            }
+            newTODO = ""
         }
         
-        withAnimation {
-            toDos.insert(task, at: 0)
+        func isNew(word: String) -> Bool {
+            !currentToDos.contains(word)
         }
-        newTODO = ""
     }
     
-    func isNew(word: String) -> Bool {
-        !toDos.contains(word)
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
-}
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
