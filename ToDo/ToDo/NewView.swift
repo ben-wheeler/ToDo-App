@@ -45,7 +45,7 @@ struct NewView: View {
                 }
                 ToolbarItemGroup(placement: .confirmationAction){
                     Button("Save") {
-                        let item = TaskItem(name: name, due: due, hasTime: hasTime, completed: false)
+                        let item = TaskItem(name: name, due: due, hasTime: hasTime, completed: false, created: Date.now)
                         todos.items.append(item)
                         dismiss()
                     }

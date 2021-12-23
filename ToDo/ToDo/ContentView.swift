@@ -13,6 +13,7 @@ struct TaskItem: Identifiable, Codable {
     let due: Date
     let hasTime: Bool
     let completed: Bool
+    let created: Date
 }
 
 class ToDos: ObservableObject {
@@ -42,7 +43,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List{
-                ForEach(todos.items, id: \.name) { task in
+                ForEach(todos.items) { task in
                     NavigationLink {
                         TaskDetails(task: task)
                     } label: {
