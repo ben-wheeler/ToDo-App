@@ -12,6 +12,7 @@ struct TaskItem: Identifiable, Codable {
     let name: String
     let due: Date
     let hasTime: Bool
+    let completed: Bool
 }
 
 class ToDos: ObservableObject {
@@ -42,6 +43,9 @@ struct ContentView: View {
         NavigationView {
             List{
                 ForEach(todos.items, id: \.name) { task in
+                    NavigationLink {
+                        TaskDetails(task: task)
+                    } label: {
                     HStack{
                         Image(systemName: "circle")
                             .foregroundColor(Color(.systemMint))
@@ -57,6 +61,7 @@ struct ContentView: View {
                         }
                     }
                     .foregroundColor(Date.now > task.due ? .red : .primary)
+                }
                 }
                 .onDelete(perform: removeItems)
             }

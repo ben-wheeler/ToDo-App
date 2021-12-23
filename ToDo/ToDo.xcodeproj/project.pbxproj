@@ -12,6 +12,7 @@
 		B57B33AF27670A2900B8D5D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57B33AE27670A2900B8D5D6 /* ContentView.swift */; };
 		B57B33B127670A2B00B8D5D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57B33B027670A2B00B8D5D6 /* Assets.xcassets */; };
 		B57B33B427670A2B00B8D5D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57B33B327670A2B00B8D5D6 /* Preview Assets.xcassets */; };
+		B5EA92312773FAAF007DB122 /* TaskDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA92302773FAAF007DB122 /* TaskDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		B57B33AE27670A2900B8D5D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B57B33B027670A2B00B8D5D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B57B33B327670A2B00B8D5D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B5EA92302773FAAF007DB122 /* TaskDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				B57B33AC27670A2900B8D5D6 /* ToDoApp.swift */,
 				B57B33AE27670A2900B8D5D6 /* ContentView.swift */,
+				B5EA92302773FAAF007DB122 /* TaskDetails.swift */,
 				B577845727676A7A00CD54C8 /* NewView.swift */,
 				B57B33B027670A2B00B8D5D6 /* Assets.xcassets */,
 				B57B33B227670A2B00B8D5D6 /* Preview Content */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B577845827676A7A00CD54C8 /* NewView.swift in Sources */,
+				B5EA92312773FAAF007DB122 /* TaskDetails.swift in Sources */,
 				B57B33AF27670A2900B8D5D6 /* ContentView.swift in Sources */,
 				B57B33AD27670A2900B8D5D6 /* ToDoApp.swift in Sources */,
 			);
