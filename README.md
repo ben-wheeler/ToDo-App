@@ -6,6 +6,7 @@ The goal of this was to create an Application for managing a To Do list built wi
 
 # Demo
 ![Ending](https://user-images.githubusercontent.com/92675290/170934539-34fba088-1a45-4f6c-a714-c5c1888b0b6e.gif)
+
 A quick and basic walkthrough of the app and its features
 ## Future of App 
 Multiple features, such as tagging, and a calendar view will be added as I progress my skill level. Eventual Goal is to be able to get the App to a finished state, ready for an App Store Release
